@@ -13,16 +13,33 @@ import java.util.Scanner;
  *
  * @author reroes
  */
-public class ArrayList02 {
+public class ArrayList021 {
 
     public static void main(String[] args) {
      
         ArrayList<String> arreglo2 = obtenerDatos();
         String cadenaFinal = obtenerCadenaFinal(arreglo2);
+        ArrayList<String> iniciales = obtenerDatosIniciales(arreglo2);
+        String cadenaFinal2 = obtenerCadenaFinal(iniciales);
         
         System.out.printf("%s\n", cadenaFinal);
+        
+        System.out.printf("%s\n", cadenaFinal2);
+        
     }
 
+    public static ArrayList<String> obtenerDatosIniciales(ArrayList<String> nombres){
+        ArrayList<String> arreglo = new ArrayList<>();
+        String auxiliar;
+        for (int i = 0; i < nombres.size(); i++) {
+            auxiliar = nombres.get(i);
+            auxiliar = auxiliar.substring(0, 1);
+            arreglo.add(auxiliar);
+        }
+        
+        return arreglo;
+    }
+    
     public static ArrayList<String> obtenerDatos(){
         ArrayList<String> arreglo2 = new ArrayList<>();
         boolean bandera = true;
